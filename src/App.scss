@@ -1,0 +1,162 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at top left, #1a1a2e, #0f0f2d 60%, #05000f 100%);
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  // Animação suave de luzes neon ao fundo
+  &::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: 0;
+    animation: pulseNeon 10s infinite alternate ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
+    filter: blur(120px);
+    z-index: 0;
+    animation: pulseNeon 14s infinite alternate ease-in-out;
+  }
+
+  @keyframes pulseNeon {
+    0% {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 3px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInTitle 2s ease-in-out forwards;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: #b3b3b3;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInText 2.5s ease-in-out forwards;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  .chat-box {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.05);
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInBox 3s ease-in-out forwards;
+  }
+
+  .start-button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #292929;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInButton 3.5s ease-in-out forwards;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background-color: #383838;
+      box-shadow: 0 0 30px rgba(255, 238, 0, 0.4), 0 0 15px rgba(0, 0, 0, 0.5);
+      transform: translateY(-5px);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  // Animações de fade-in suaves para os elementos
+  @keyframes fadeInTitle {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInBox {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInButton {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
