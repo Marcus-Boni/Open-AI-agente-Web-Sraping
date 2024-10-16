@@ -1,5 +1,3 @@
-const USE_LOCAL_RELAY_SERVER_URL: string | undefined = void 0;
-
 import { useEffect, useRef, useCallback, useState } from 'react';
 
 import { RealtimeClient } from '@openai/realtime-api-beta';
@@ -11,6 +9,8 @@ import { X, Edit, Zap } from 'react-feather';
 import { Button } from '../components/button/Button';
 
 import './VoiceChat.scss';
+
+const USE_LOCAL_RELAY_SERVER_URL: string | undefined = void 0;
 
 type Props = {
   scrapedContent: string;
@@ -116,7 +116,7 @@ ${scrapedContent}
     client.sendUserMessageContent([
       {
         type: `input_text`,
-        text: `Hello!`, // Can change this initial text
+        text: `Olá!`, // Can change this initial text
       },
     ]);
 
@@ -259,7 +259,7 @@ ${scrapedContent}
 
     client.updateSession({ instructions: instructions });
     client.updateSession({ input_audio_transcription: { model: 'whisper-1' } });
-    client.updateSession({ voice: 'echo' });
+    client.updateSession({ voice: 'alloy' });
 
     client.on('error', (event: any) => console.error(event));
     client.on('conversation.interrupted', async () => {
