@@ -1,7 +1,7 @@
 # 🤖 AI Voice Assistant with OpenAI Realtime API
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Deploy](https://img.shields.io/badge/Deploy-Live-blue)](https://openai-voice-assistant-opt.vercel.app/)
+[![Deploy](https://img.shields.io/badge/Deploy-Live-blue)](https://openairealtime-agente-opt.netlify.app/)
 
 Uma aplicação React que utiliza a [OpenAI Realtime API](https://platform.openai.com/docs/guides/realtime) para criar um agente de voz inteligente, capaz de analisar conteúdos de sites em tempo real, qualificar leads e conversar por áudio com o usuário. O projeto foi inspirado e adaptado do exemplo oficial da OpenAI: [openai-realtime-console](https://github.com/openai/openai-realtime-console).
 
@@ -128,3 +128,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para 
 <div align="center">
   <b>Feito com 💚 por Marcus</b>
 </div>
+
